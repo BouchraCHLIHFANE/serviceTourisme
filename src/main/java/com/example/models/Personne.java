@@ -1,9 +1,12 @@
 package com.example.models;
+
 import javax.persistence.*;
 
-
+@Entity
+@Table(name = "personne")
+@Inheritance(strategy = InheritanceType.JOINED)
 public class Personne {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	Long id;
@@ -11,16 +14,16 @@ public class Personne {
 	// @NonNull
 	@Column(name = "nom")
 	String nom;
-	
+
 	@Column(name = "prenom")
 	String prenom;
-	
+
 	@Column(name = "email")
 	String email;
-	
+
 	@Column(name = "nationalite")
 	String nationalite;
-	
+
 	@Column(name = "adresse")
 	String adresse;
 
@@ -32,6 +35,9 @@ public class Personne {
 		this.email = email;
 		this.nationalite = nationalite;
 		this.adresse = adresse;
+	}
+
+	public Personne() {
 	}
 
 	public Long getId() {
@@ -81,6 +87,5 @@ public class Personne {
 	public void setAdresse(String adresse) {
 		this.adresse = adresse;
 	}
-	
 
 }
