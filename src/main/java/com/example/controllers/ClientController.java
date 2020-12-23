@@ -14,27 +14,16 @@ import com.example.repositories.ClientRepository;
 
 
 @RestController
-@RequestMapping(value = "comptes")
+@RequestMapping(value = "client")
 public class ClientController {
 	@Autowired
 	ClientRepository clientRepository;
 	
 
-	@GetMapping(value="/client")
+	@GetMapping(value="/")
 	public Iterable<com.example.models.Client> listeClients(){
 		return clientRepository.findAll();
 	}
 	
-	@GetMapping(value="/")
-	public String Clients(){
-		StringBuffer ch= new StringBuffer();
-		List <Client>clients =new ArrayList<Client>();
-		clients =(List<Client>) clientRepository.findAll();
-		for(Client C: clients) {
-			for(Destination D: C.getDestinations()) {
-				ch.append(D.getDetails());
-			}
-		}
-		return "";
-	}
+	
 }

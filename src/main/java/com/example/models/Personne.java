@@ -33,8 +33,7 @@ public class Personne {
 	@Column(name = "prenom")
 	String prenom;
 
-	@Column(name = "email")
-	String email;
+	
 
 	@Column(name = "nationalite")
 	String nationalite;
@@ -56,16 +55,15 @@ public class Personne {
 	
 	@OneToOne(fetch = FetchType.EAGER)
 	// si on veut nomer la colonne
-	@JoinColumn(name = "compte_id")
+	//@JoinColumn(name = "compte_id")
 	private Compte compte;
 
-	public Personne(Long id, String nom, String prenom, String email, String nationalite, String adresse,
+	public Personne(Long id, String nom, String prenom, String nationalite, String adresse,
 			List<Destination> destinations, Compte compte) {
 		super();
 		this.id = id;
 		this.nom = nom;
 		this.prenom = prenom;
-		this.email = email;
 		this.nationalite = nationalite;
 		this.adresse = adresse;
 		this.destinations = destinations;
@@ -115,14 +113,7 @@ public class Personne {
 		this.prenom = prenom;
 	}
 
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
+	
 	public String getNationalite() {
 		return nationalite;
 	}

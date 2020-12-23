@@ -34,10 +34,10 @@ public class Client extends Personne {
 		this.moyensDeTransport = moyensDeTransport;
 	}
 
-	public Client(Long id, String nom, String prenom, String email, String nationalite, String adresse,
+	public Client(Long id, String nom, String prenom,  String nationalite, String adresse,
 			List<Destination> destinations, Compte compte, String paysOrigine, String villeOrigine,
 			List<MoyenDeTransport> moyenDeTransport) {
-		super(id, nom, prenom, email, nationalite, adresse, destinations, compte);
+		super(id, nom, prenom, nationalite, adresse, destinations, compte);
 		this.paysOrigine = paysOrigine;
 		this.villeOrigine = villeOrigine;
 		this.moyensDeTransport = moyenDeTransport;

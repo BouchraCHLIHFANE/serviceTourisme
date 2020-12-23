@@ -12,7 +12,7 @@ import com.example.repositories.CompteRepository;
 import com.example.services.CompteService;
 
 @RestController
-@RequestMapping(value = "comptes")
+@RequestMapping(value = "compte")
 public class CompteController {
 	
 	@Autowired
@@ -20,7 +20,7 @@ public class CompteController {
 	@Autowired
 	CompteService compteService;
    
-	@GetMapping(value = "authentify")
+	@GetMapping(value = "/")
 	public List<Compte> findComptesPatient() {
 		System.out.println("hello");
 		return (List<Compte>) compteRepository.findAll();

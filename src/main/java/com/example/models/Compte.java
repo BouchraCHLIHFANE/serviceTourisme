@@ -15,7 +15,9 @@ public class Compte {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	Long utiliateur;
+	@Column(name = "email")
+	String email;
+	
 
 	// @NonNull
 	@Column(name = "motDePasse")
@@ -26,40 +28,29 @@ public class Compte {
 	 */
 	/**
 	 * Many To One + eviter les boucles infinies
+	 * 
 	 * @ManyToOne(fetch = FetchType.EAGER)
-		@JsonManagedReference
-		private Personne personne;
-	
+	 * @JsonManagedReference private Personne personne;
+	 * 
 	 */
-	 	@OneToOne( fetch = FetchType.EAGER)
-	    //@JoinColumn(name = "personne_id", nullable = false)
-	    private Personne personne;
-	
-	public Personne getPersonne() {
-		return personne;
-	}
-
-	public void setPersonne(Personne personne) {
-		this.personne = personne;
-	}
 
 	public Compte() {
 		super();
 	}
 
-	public Compte(Long utiliateur, String motDePasse, Personne personne) {
+	public Compte(String email, String motDePasse) {
 		super();
-		this.utiliateur = utiliateur;
+		this.email = email;
 		this.motDePasse = motDePasse;
-		this.personne = personne;
+
 	}
 
-	public Long getUtiliateur() {
-		return utiliateur;
+	public String getUtiliateur() {
+		return email;
 	}
 
-	public void setUtiliateur(Long utiliateur) {
-		this.utiliateur = utiliateur;
+	public void setUtiliateur(String email) {
+		this.email = email;
 	}
 
 	public String getMotDePasse() {
@@ -67,12 +58,6 @@ public class Compte {
 	}
 
 	public void setMotDePasse(String motDePasse) {
-		this.motDePasse = motDePasse;
-	}
-
-	public Compte(Long utiliateur, String motDePasse) {
-		super();
-		this.utiliateur = utiliateur;
 		this.motDePasse = motDePasse;
 	}
 
