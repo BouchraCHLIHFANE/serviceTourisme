@@ -8,5 +8,6 @@ import javax.persistence.Table;
 @Table(name = "admin")
 @PrimaryKeyJoinColumn(name = "id")
 public class Admin extends Personne {
+	public Admin() {}
 	
 }
