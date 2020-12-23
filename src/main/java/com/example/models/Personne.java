@@ -1,6 +1,20 @@
 package com.example.models;
 
-import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
 
 @Entity
 @Table(name = "personne")
@@ -9,10 +23,11 @@ public class Personne {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
+
 	Long id;
 
 	// @NonNull
-	@Column(name = "nom")
+	@Column(name = "nom", length = 40)
 	String nom;
 
 	@Column(name = "prenom")
@@ -26,8 +41,26 @@ public class Personne {
 
 	@Column(name = "adresse")
 	String adresse;
+	/*
+	 * @OneToMany(mappedBy="personne") private List <Compte> comptes ;
+	 */
+	/*
+	 * @ManyToMany
+	 * 
+	 * @JoinTable private List<Destination> destinations = new ArrayList<>();
+	 */
 
-	public Personne(Long id, String nom, String prenom, String email, String nationalite, String adresse) {
+	@ManyToMany(mappedBy = "personnes")
+	private List<Destination> destinations = new ArrayList<>();
+
+	
+	@OneToOne(fetch = FetchType.EAGER)
+	// si on veut nomer la colonne
+	@JoinColumn(name = "compte_id")
+	private Compte compte;
+
+	public Personne(Long id, String nom, String prenom, String email, String nationalite, String adresse,
+			List<Destination> destinations, Compte compte) {
 		super();
 		this.id = id;
 		this.nom = nom;
@@ -35,6 +68,24 @@ public class Personne {
 		this.email = email;
 		this.nationalite = nationalite;
 		this.adresse = adresse;
+		this.destinations = destinations;
+		this.compte = compte;
+	}
+
+	public List<Destination> getDestinations() {
+		return destinations;
+	}
+
+	public void setDestinations(List<Destination> destinations) {
+		this.destinations = destinations;
+	}
+
+	public Compte getCompte() {
+		return compte;
+	}
+
+	public void setCompte(Compte compte) {
+		this.compte = compte;
 	}
 
 	public Personne() {
