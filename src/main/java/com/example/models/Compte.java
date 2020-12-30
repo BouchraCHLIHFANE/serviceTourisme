@@ -61,4 +61,9 @@ public class Compte {
 		this.motDePasse = motDePasse;
 	}
 
+	@Override
+	public String toString() {
+		return "Compte [email=" + email + ", motDePasse=" + motDePasse + "]";
+	}
+
 }

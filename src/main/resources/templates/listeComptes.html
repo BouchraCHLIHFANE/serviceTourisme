@@ -54,10 +54,9 @@
 	
 	 -->
 	
-	<p>@{pageTitle }</p>
-	<p>@{pageTitle }</p>
+	
 	<p th:text="${pageTitle}"></p>
-	<p th:text="${nom}"></p>
+	<p th:text="${pageTitle}"></p>
 
 
 	<div class="col-md10">
@@ -69,13 +68,15 @@
 				</tr>
 			</thead>
 			<tbody>
+			
 				<tr th:each="person : ${comptesListes}">
+					<td th:utext="${person.email}"></td>
 					<td th:utext="${person.motDePasse}"></td>
-					<td th:utext="${person.utiliateur}"></td>
 				</tr>
+				 
 			</tbody>
 		</table>
 	</div>
-
+ 
 </body>
 </html>
