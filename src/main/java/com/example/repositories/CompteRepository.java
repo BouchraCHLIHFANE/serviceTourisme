@@ -4,5 +4,5 @@ import org.springframework.data.repository.CrudRepository;
 
 import com.example.models.Compte;
 
-public interface CompteRepository extends CrudRepository<Compte,String> {
+public interface CompteRepository extends CrudRepository<Compte,Long> {
 }
