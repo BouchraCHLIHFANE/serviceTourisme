@@ -35,7 +35,6 @@ public class Compte {
 	 */
 
 	public Compte() {
-		super();
 	}
 
 	public Compte(String email, String motDePasse) {
@@ -45,11 +44,12 @@ public class Compte {
 
 	}
 
-	public String getUtiliateur() {
+
+	public String getEmail() {
 		return email;
 	}
 
-	public void setUtiliateur(String email) {
+	public void setEmail(String email) {
 		this.email = email;
 	}
 

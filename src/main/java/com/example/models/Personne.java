@@ -21,6 +21,12 @@ import javax.persistence.Table;
 @Inheritance(strategy = InheritanceType.JOINED)
 public class Personne {
 
+	@Override
+	public String toString() {
+		return "Personne [id=" + id + ", nom=" + nom + ", prenom=" + prenom + ", nationalite=" + nationalite
+				+ ", adresse=" + adresse + ", destinations=" + destinations + ", compte=" + compte + "]";
+	}
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 
