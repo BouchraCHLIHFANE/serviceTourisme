@@ -65,6 +65,7 @@
 				<tr>
 					<th>email</th>
 					<th>mot de passe</th>
+					<th>gestion</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -72,6 +73,8 @@
 				<tr th:each="person : ${comptesListes}">
 					<td th:utext="${person.email}"></td>
 					<td th:utext="${person.motDePasse}"></td>
+				
+					<td><button><a th:href="@{${'delete/'+person.id}}">delete</a></button></td>
 				</tr>
 				 
 			</tbody>

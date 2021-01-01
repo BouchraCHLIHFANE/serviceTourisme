@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<!-- 
+<head>
+
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<link rel="stylesheet" href="stylee.css">
+<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+<script src="script.js"></script>
+</head>
+<body>
+<div id='cssmenu'>
+<ul>
+   <li ><a href='Session.jsp'>Session</a></li> 
+   <li class='active'><a href='#'  > Ajouter </a></li>  
+   <li><a href='#' > Liste des résidents </a></li>
+   <li><a href='#'>Rechercher un racutesident</a></li>
+ <li><a href='#' > Exporter Résidents </a></li>   
+   <li><a href='#' > Déconnexion </a></li>
+</ul>
+</div>
+<p>User Registration </p>
+<a href="/compte/register" >Click here to create a new person</a>
+</body>
+-->
+<head>
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Colorlib Templates">
+    <meta name="author" content="Colorlib">
+    <meta name="keywords" content="Colorlib Templates">
+
+    <!-- Title Page-->
+    <title>Au Register Forms by Colorlib</title>
+
+    <!-- Icons font CSS-->
+    <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+    <link href="vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+    <!-- Font special for pages-->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+    <!-- Vendor CSS-->
+    <link href="vendor/select2/select2.min.css" rel="stylesheet" media="all">
+    <link href="vendor/datepicker/daterangepicker.css" rel="stylesheet" media="all">
+
+    <!-- Main CSS-->
+    <link href="css/main.css" rel="stylesheet" media="all">
+    <!-- -menu -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<link rel="stylesheet" href="stylee.css">
+<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+<script src="script.js"></script>
+
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+		
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="css/style.css">
+    <style>
+    body {
+  background-image: url('hoceimaaa.jpg');
+
+	}
+	</style>
+</head>
+
+<body>
+
+<div class="wrapper d-flex align-items-stretch">
+			<nav id="sidebar">
+				<div class="custom-menu">
+					<button type="button" id="sidebarCollapse" class="btn btn-primary">
+	        </button>
+        </div>
+	  		<div class="img bg-wrap text-center py-4" style="background-image: url(images/bg_1.jpg);">
+	  			<div class="user-logo">
+	  				<div class="img" style="background-image: url(images/logo.jpg);"></div>
+	  				<h3>Catriona Henderson</h3>
+	  			</div>
+	  		</div>
+        <ul class="list-unstyled components mb-5">
+          <li class="active">
+            <a href="/destination/addDestination"><span class="fa fa-home mr-3"></span> Ajouter une destination</a>
+          </li>
+          <li>
+            <a href="#"><span class="fa fa-gift mr-3"></span> Gestion des destinations</a>
+          </li>
+          <li>
+            <a href="#"><span class="fa fa-trophy mr-3"></span>Ajouter des moyens de transport</a>
+          </li>
+          <li>
+            <a href="#"><span class="fa fa-cog mr-3"></span> Gestion des moyens de transport</a>
+          </li>
+          <li>
+            <a href="#"><span class="fa fa-support mr-3"></span> Gestion des services d'hebergement</a>
+          </li>
+          <li>
+            <a href="#"><span class="fa fa-sign-out mr-3"></span> Sign Out</a>
+          </li>
+        </ul>
+
+    	</nav>
+<!-- menu ancien -->
+    <div style="margin-left: 10%">
+        <div class="wrapper wrapper--w680" >
+            <div class="card card-4">
+                <div class="card-body">
+                    <h2 class="title">Registration Form</h2>
+                    <form method="POST">
+                        <div class="row row-space">
+                            
+                               
+                                    <label class="label" >nom d'endroit </label>
+                                    <input class="input--style-4" type="text" name="first_name">
+                               
+                            
+                            
+                                <div class="input-group">
+                                    <label class="label">emplacement</label>
+                                    <input class="input--style-4" type="text" name="last_name">
+                                </div>
+                           
+                           <div class="input-group">
+                                    <label class="label">informations </label>
+                                    <input class="input--style-4" type="text" name="last_name">
+                                </div>
+                                
+                            <div class="input-group">
+                                    <label class="label">emplacement</label>
+                                    <input class="input--style-4" type="textarea" name="last_name">
+                            </div>
+                             
+                                <div class="input-group">
+                                    <label class="label">Type</label>
+                                    <div class="p-t-10">
+                                        <label class="radio-container m-r-45">Plage
+                                            <input type="radio" checked="checked" name="gender">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="radio-container">Hotel
+                                            <input type="radio" name="gender">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="radio-container m-r-45">Foret
+                                            <input type="radio" checked="checked" name="gender">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                    </div>
+                               
+                                
+                        </div>
+                        </div>
+                        </form>
+                        </div>
+                        </div>
+                        </div>
+                        </div>
+                        </div>
+                        
+<!-- 
+<div id='cssmenu'>
+<ul>
+   <li ><a href='Session.jsp'>Consulter les destinations</a></li> 
+   <li class='active'><a href='#'  > gestion des destinations</a></li>  
+   <li><a href='#' > gestion des moyens de transport  </a></li>
+   <li><a href='#' > gestion des services d'hebergement   </a></li>
+   <li><a href='#' > Deconnexion </a></li>
+</ul>
+</div>
+ -->
+    
+
+    <!-- Jquery JS-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <!-- Vendor JS-->
+    <script src="vendor/select2/select2.min.js"></script>
+    <script src="vendor/datepicker/moment.min.js"></script>
+    <script src="vendor/datepicker/daterangepicker.js"></script>
+
+    <!-- Main JS-->
+    <script src="js/global.js"></script>
+
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+
+</html>

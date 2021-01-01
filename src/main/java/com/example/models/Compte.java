@@ -29,7 +29,7 @@ public class Compte {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-
+	
 	Long id;
 	@Column(name = "email")
 	String email;
@@ -47,7 +47,12 @@ public class Compte {
 	 * @JsonManagedReference private Personne personne;
 	 * 
 	 */
-
+	public Long getId() {
+		return id;
+	}
+	public void setId(Long id) {
+		this.id=id;
+	}
 	public Compte() {
 	}
 
