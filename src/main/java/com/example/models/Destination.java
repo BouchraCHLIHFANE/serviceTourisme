@@ -43,6 +43,9 @@ public class Destination {
 
 	@Column(name = "details")
 	String details;
+	
+	@Column(name = "type")
+	String type;
 
 	@ManyToMany(cascade = { CascadeType.PERSIST, CascadeType.MERGE,
 
@@ -64,15 +67,31 @@ public class Destination {
 	public Destination() {
 	}
 
-	public Destination(Long id, String ville, String emplacement, String nom, String details,
-			List<Personne> personnes) {
+	public Destination( String ville, String emplacement, String nom, String details,
+		String type) {
 		super();
 		this.id = id;
 		this.ville = ville;
 		this.emplacement = emplacement;
 		this.nom = nom;
 		this.details = details;
-		this.personnes = personnes;
+		this.type=type;
+	}
+
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
+
+	public List<ServiceHebergement> getServicesHebergement() {
+		return servicesHebergement;
+	}
+
+	public void setServicesHebergement(List<ServiceHebergement> servicesHebergement) {
+		this.servicesHebergement = servicesHebergement;
 	}
 
 	/*

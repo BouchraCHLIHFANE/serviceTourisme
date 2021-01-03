@@ -11,8 +11,9 @@ import javax.persistence.Table;
 @PrimaryKeyJoinColumn(name = "id")
 public class Montagne extends Destination{
 
-	public Montagne(Long id, String ville, String emplacement, String nom, String details, List<Personne> personnes) {
-		super(id, ville, emplacement, nom, details, personnes);
+
+	public Montagne(String ville, String emplacement, String nom, String details,String type) {
+		super(ville, emplacement, nom, details, type);
 	}
 	public Montagne() {
 		

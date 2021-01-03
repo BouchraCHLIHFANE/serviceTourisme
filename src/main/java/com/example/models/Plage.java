@@ -11,8 +11,8 @@ import javax.persistence.Table;
 @PrimaryKeyJoinColumn(name = "id")
 public class Plage extends Destination {
 
-	public Plage(Long id, String ville, String emplacement, String nom, String details, List<Personne> personnes) {
-		super(id, ville, emplacement, nom, details, personnes);
+	public Plage(String ville, String emplacement, String nom, String details,String type) {
+		super(ville, emplacement, nom, details, type);
 	}
 	public Plage() {
 		

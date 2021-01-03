@@ -11,9 +11,9 @@ import javax.persistence.Table;
 @PrimaryKeyJoinColumn(name = "id")
 public class EspaceRestauration extends Destination {
 
-	public EspaceRestauration(Long id, String ville, String emplacement, String nom, String details,
-			List<Personne> personnes) {
-		super(id, ville, emplacement, nom, details, personnes);
+
+	public EspaceRestauration(Long id, String ville, String emplacement, String nom, String details,String type) {
+		super(ville, emplacement, nom, details,type);
 	}
 
 	public EspaceRestauration() {
