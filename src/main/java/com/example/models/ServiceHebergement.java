@@ -25,13 +25,62 @@ public class ServiceHebergement {
 	@GeneratedValue(strategy =GenerationType.AUTO)
 	Long id;
 	
+	@Column(name="nom")
+	String nom;
+	
+	@Column(name="type")
+	String type;
+	
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
+
+	public String getNom() {
+		return nom;
+	}
+
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
+	
+
 	@Column(name="classification")
-	String classificaation;
+	String classification;
+	
+	@Column(name="tarifs")
+	String tarifs;
+	
+	@Column(name="details")
+	String details;
+	
+
+
 
 	@ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
    // @JoinColumn(name = "TICKET_ID")  // you can rename the join column 
     private Destination destination;
 	
+	
+	public String getTarifs() {
+		return tarifs;
+	}
+
+	public void setTarifs(String tarifs) {
+		this.tarifs = tarifs;
+	}
+
+	public String getDetails() {
+		return details;
+	}
+
+	public void setDetails(String details) {
+		this.details = details;
+	}
+
 	public Destination getDestination() {
 		return destination;
 	}
@@ -40,10 +89,16 @@ public class ServiceHebergement {
 		this.destination = destination;
 	}
 
-	public ServiceHebergement(Long id, String classificaation) {
+	
+
+	public ServiceHebergement(String classificaation, String tarifs, String details, Destination destination,String nom,String type) {
 		super();
-		this.id = id;
-		this.classificaation = classificaation;
+		this.classification = classificaation;
+		this.tarifs = tarifs;
+		this.details = details;
+		this.destination = destination;
+		this.nom=nom;
+		this.type=type;
 	}
 
 	public ServiceHebergement() {
@@ -57,13 +112,18 @@ public class ServiceHebergement {
 		this.id = id;
 	}
 
-	public String getClassificaation() {
-		return classificaation;
+	public String getClassification() {
+		return classification;
 	}
 
-	public void setClassificaation(String classificaation) {
-		this.classificaation = classificaation;
+	public void setClassification(String classificaation) {
+		this.classification = classificaation;
 	}
 	
+	@Override
+	public String toString() {
+		return "ServiceHebergement [id=" + id + ", classification=" + classification + ", tarifs=" + tarifs
+				+ ", details=" + details + ", destination=" + destination + "]";
+	}
 	
 }

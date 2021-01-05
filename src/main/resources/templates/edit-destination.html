@@ -89,10 +89,10 @@
 				</li>
 				<li><a href="/destination/gestionDestination"><span class="fa fa-gift mr-3"></span>
 						Gestion des destinations</a></li>
-				<li><a href="#"><span class="fa fa-trophy mr-3"></span>Ajouter
-						des moyens de transport</a></li>
 				<li><a href="/AddserviceHebergement"><span class="fa fa-trophy mr-3"></span>Ajouter
 						des espaces d'hebergement</a></li>
+				<li><a href="#"><span class="fa fa-cog mr-3"></span>
+						Gestion des moyens de transport</a></li>
 				<li><a href="#"><span class="fa fa-support mr-3"></span>
 						Gestion des services d'hebergement</a></li>
 				<li><a href="#"><span class="fa fa-sign-out mr-3"></span>
@@ -117,43 +117,43 @@
 				<div class="card card-4">
 					<div class="card-body">
 						<h2 class="title">Registration Form</h2>
-						<form th:action="@{/destination/addDestination}"
-							th:object="${destination}" method="post">
+						<form th:action="@{/destination/update/} +${destination.id}" name="" method="post" th:object="${destination}">
 							<div class="row row-space">
 								<label class="label">nom d'endroit </label> <input
-									class="input--style-4" type="text" name="nom" th:field="*{nom}">
+									class="input--style-4" type="text"  th:value="${destination.nom}" th:field="*{nom}" >
 								<div class="input-group">
 									<label class="label">emplacement</label> <input
 										class="input--style-4" type="text" name="emplacement"
-										th:field="*{emplacement}" style="height: 100px">
+										 th:value="${destination.emplacement}" th:field="*{emplacement}"style="height: 100px">
 								</div>
-								
 								<div class="input-group">
 									<label class="label">Ville</label> <input
-										class="input--style-4" type="text" name="ville"
-										th:field="*{ville}" style="height: 100px">
-								</div>
-								<div class="input-group">
-									<label class="label">informations </label> <input
-										style="height: 100px"
-										class="input--style-4" type="textarea" name="details"
-										th:field="*{details}">
+										class="input--style-4" type="text" 
+										 th:value="${destination.ville}" th:field="*{ville}">
 								</div>
 
 								
+
+								<div class="input-group">
+									<label class="label">Details</label> 
+									<input class="input--style-4" 
+										   style="height: 100px"
+										   type="textarea" 
+										   
+										   th:value="${destination.details}" th:field="*{details}">
+								</div>
 
 								<div class="input-group">
 									<label class="label">Type</label>
 									<div class="p-t-10">
 										<label class="radio-container m-r-45">Plage <input
-											type="radio" checked="checked" name="type" value="plage"
-											th:field="*{type}"> <span class="checkmark"></span>
+											type="radio" checked="checked"  th:value="${destination.type}" th:field="*{type}"
+											> <span class="checkmark"></span>
 										</label> <label class="radio-container">Hotel <input
-											type="radio" name="type" value="hotel" th:field="*{type}">
+											type="radio" th:value="${destination.type}" th:field="*{type}">
 											<span class="checkmark"></span>
 										</label> <label class="radio-container m-r-45">Foret <input
-											type="radio" checked="checked" value="foret" name="type"
-											th:field="*{type}"> <span class="checkmark"></span>
+											type="radio" th:value="${destination.type}" th:field="*{type}"> <span class="checkmark"></span>
 										</label>
 									</div>
 								</div>

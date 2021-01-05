@@ -13,8 +13,9 @@ public class Motel extends ServiceHebergement {
 
 	}
 
-	public Motel(Long id, String classificaation) {
-		super(id, classificaation);
+	public Motel(String classificaation,String tarifs , String details,Destination d,String nom,String type) {
+		super(classificaation,tarifs,details,d ,nom,type);
 	}
+
 
 }
