@@ -40,14 +40,13 @@ public class DestinationController {
 	ForetRepository foretRepository;
 	
 	@GetMapping(value = "/addDestination")
-	public ModelAndView showAddCompteForm() {
+	public ModelAndView showAddDestinationForm() {
 		ModelAndView mv = new ModelAndView();
 		Destination d= new Destination();
 		mv.setViewName("add-destination");
 		mv.addObject("destination",d);
 		return mv;
 	}
-	
 	@RequestMapping(value = { "/addDestination" }, method = RequestMethod.POST)
 	public ModelAndView saveCompte(ModelAndView mv, //
 			@Valid @ModelAttribute("destination") Destination destination) {

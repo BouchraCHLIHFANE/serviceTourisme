@@ -10,7 +10,8 @@
 <meta name="keywords" content="Colorlib Templates">
 
 <!-- Title Page-->
-<title>Au Register Forms by Colorlib</title>
+<!-- <title>Au Register Forms by Colorlib</title>  -->
+<title  th:text="${pageTitle}"></title>
 
 <!-- Icons font CSS-->
 <link href="../static/vendor/font-awesome-4.7/css/font-awesome.min.css"
@@ -100,22 +101,14 @@
 			</ul>
 
 		</nav>
-		<!-- menu ancien -->
-		<!-- 
-<div id='cssmenu'>
-<ul>
-   <li ><a href='Session.jsp'>Consulter les destinations</a></li> 
-   <li class='active'><a href='#'  > gestion des destinations</a></li>  
-   <li><a href='#' > gestion des moyens de transport  </a></li>
-   <li><a href='#' > gestion des services d'hebergement   </a></li>
-   <li><a href='#' > Deconnexion </a></li>
-</ul>
-</div>
- -->
-		<div style="margin-left: 10%">
+<div style="margin-left: 10%">
 			<div class="wrapper wrapper--w680">
 				<div class="card card-4">
 					<div class="card-body">
+						<!-- -
+						<p th:text = "${nameSession}"></p>
+						<p th:text = "${emailSession}"></p>
+						 -->
 						<h2 class="title">Registration Form</h2>
 						<form th:action="@{/destination/addDestination}"
 							th:object="${destination}" method="post">

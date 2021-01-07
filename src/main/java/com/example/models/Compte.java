@@ -2,9 +2,11 @@ package com.example.models;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.GenericGenerator;
@@ -36,6 +38,10 @@ public class Compte {
 	
 	@Column(name = "motDePasse")
 	String motDePasse;
+	@OneToOne(fetch = FetchType.EAGER)
+	// si on veut nomer la colonne
+	//@JoinColumn(name = "compte_id")
+	private Personne personne;
 
 	/*
 	 * @JoinColumn(name = "personne_id") private Personne personne;
@@ -52,6 +58,13 @@ public class Compte {
 	}
 	public void setId(Long id) {
 		this.id=id;
+	}
+	
+	public Personne getPersonne() {
+		return personne;
+	}
+	public void setPersonne(Personne personne) {
+		this.personne = personne;
 	}
 	public Compte() {
 	}

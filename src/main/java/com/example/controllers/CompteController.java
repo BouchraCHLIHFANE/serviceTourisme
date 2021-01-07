@@ -30,12 +30,47 @@ public class CompteController {
 	private CompteService compteService;
 	@Autowired
 	private CompteRepository compteRepository;
-
+	
 	@GetMapping(value = "/")
-	public List<Compte> listeDesComptes() {
-		return (List<Compte>) compteRepository.findAll();
+	public  ModelAndView Authentification() {
+		ModelAndView mv= new ModelAndView();
+		Compte compte = new Compte();
+		mv.addObject("compte",compte);
+		mv.setViewName("accueil");
+		return mv;
+		
 	}
+	
+	@RequestMapping(value = { "/authentification" }, method = RequestMethod.POST)
+	public ModelAndView saveCompte(ModelAndView mv,@Valid @ModelAttribute("compte") Compte compte) {
 
+		String email = compte.getEmail();
+		String motDePasse = compte.getMotDePasse();
+		List<Compte>listeComptes=(List<Compte>)compteRepository.findAll();
+		for(Compte C:listeComptes ) {
+			if(email.equals(C.getEmail()) && motDePasse.equals(C.getMotDePasse())) {
+				System.out.println("bien authentifié");
+				mv.setViewName("redirect:/destination/addDestination");
+				return mv;
+			}
+		}
+			
+			mv.setViewName("redirect:/comptes/");
+				return mv;
+	}
+	@GetMapping(value = "/apresAuthentif")
+	public  ModelAndView redirectionApresAuth(Compte C) {
+		ModelAndView mv= new ModelAndView();
+		Compte compte = new Compte();
+		mv.addObject("compte",compte);
+		mv.setViewName("accueil");
+		return mv;
+		
+	}
+	
+	
+	
+	/*
 	@GetMapping(value = "/add")
 	public ModelAndView listComptes(ModelAndView mv) {
 		mv.addObject("pageTitle", "Students | Add");
@@ -110,5 +145,5 @@ public class CompteController {
 		 compteRepository.deleteById(compteId);
 		 mv.setViewName("redirect:/comptes/add");
 		 return mv;
-	}
+	} 	*/
 }
