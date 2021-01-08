@@ -24,10 +24,14 @@
          <input type="submit" value="Create" />
       </form>
        -->
-       <form action="#" th:action="@{/comptes/addCompte}" th:object="${compte}" method="post">
+      
+       <form action="#" th:action="@{/comptes/addCompte}" th:object="${compte}" method="post" enctype="multipart/form-data">
     	<p>email <input type="text" th:field="*{email}" /></p>
         <p>mot de passe <input type="text" th:field="*{motDePasse}" /></p>
+        <input type="file" name="picture" id="picture"  />
         <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
+        <fieldset>
+            </fieldset>
     </form>
 
 </body>

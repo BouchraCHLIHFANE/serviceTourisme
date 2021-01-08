@@ -1,5 +1,7 @@
 package com.example.models;
 
+import java.beans.Transient;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -8,8 +10,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
-
-import org.hibernate.annotations.GenericGenerator;
 
 @Table
 @Entity(name = "compte")
@@ -53,6 +53,27 @@ public class Compte {
 	 * @JsonManagedReference private Personne personne;
 	 * 
 	 */
+	
+
+	
+	//@Column(name = "photo", columnDefinition="BLOB")
+	@Column(name = "photo" ,nullable = true, length = 64)
+    private String profilePicture;
+	
+	// Pour autoriser l'accès au répertoire user-photos dans le système de fichiers
+	@Transient
+    public String getPhotosImagePath() {
+        if (profilePicture == null || id == null) return null;
+         
+        return "/imagesComptes/" + id + "/" + profilePicture;
+    }
+	
+	public String getProfilePicture() {
+		return profilePicture;
+	}
+	public void setProfilePicture(String fileName) {
+		this.profilePicture = fileName;
+	}
 	public Long getId() {
 		return id;
 	}
@@ -74,6 +95,12 @@ public class Compte {
 		this.email = email;
 		this.motDePasse = motDePasse;
 
+	}
+	public Compte(String email, String motDePasse,String photo) {
+		super();
+		this.email = email;
+		this.motDePasse = motDePasse;
+		this.profilePicture=photo;
 	}
 
 

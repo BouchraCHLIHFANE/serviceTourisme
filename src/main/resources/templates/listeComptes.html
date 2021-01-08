@@ -65,6 +65,7 @@
 				<tr>
 					<th>email</th>
 					<th>mot de passe</th>
+					<th>image</th>
 					<th>gestion</th>
 				</tr>
 			</thead>
@@ -73,7 +74,8 @@
 				<tr th:each="person : ${comptesListes}">
 					<td th:utext="${person.email}"></td>
 					<td th:utext="${person.motDePasse}"></td>
-				
+					<img  th:src="@{~/imagesComptes/56/PHOTO-01.jpg}"/> 
+					<!-- <img  th:src="@{'imagesComptes/56'}"/>   -->
 					<td><button><a th:href="@{${'delete/'+person.id}}">delete</a></button></td>
 				</tr>
 				 
