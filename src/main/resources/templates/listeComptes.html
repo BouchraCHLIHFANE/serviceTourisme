@@ -74,8 +74,8 @@
 				<tr th:each="person : ${comptesListes}">
 					<td th:utext="${person.email}"></td>
 					<td th:utext="${person.motDePasse}"></td>
-					<img  th:src="@{~/imagesComptes/56/PHOTO-01.jpg}"/> 
-					<!-- <img  th:src="@{'imagesComptes/56'}"/>   -->
+					<!-- "imagesComptes/" + newCompte.getId();    -->
+				<!--  	<img  src="../56/PHOTO-1.JPG" th:src="@{56/PHOTO-1.JPG} />    -->
 					<td><button><a th:href="@{${'delete/'+person.id}}">delete</a></button></td>
 				</tr>
 				 

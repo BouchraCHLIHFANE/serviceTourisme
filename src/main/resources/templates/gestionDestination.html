@@ -42,14 +42,14 @@
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 
 <script src="http://code.jquery.com/jquery-latest.min.js"
-	type="text/javascript"></script>
+		type="text/javascript"></script>
 
 <link
 	href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900"
 	rel="stylesheet">
 
 <link rel="stylesheet"
-	href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <link href="static/css/style.css" type="text/css" rel="stylesheet"
 	th:href="@{/css/style.css}" />
@@ -69,26 +69,27 @@
 				</button>
 			</div>
 			<div class="img bg-wrap text-center py-4"
-				th:style="'background-image: url(' + @{/images/bg_1.jpg} + ')'">
+				 th:style="'background-image: url(' + @{/images/bg_1.jpg} + ')'">
 				<div class="user-logo">
 					<div class="img"
-						style="background-image: url(static/images/logo.jpg);"></div>
+						 style="background-image: url(static/images/logo.jpg);"></div>
 					<h3>Catriona Henderson</h3>
 				</div>
 			</div>
 			<ul class="list-unstyled components mb-5">
-				<li class="active"><a href="/destination/addDestination"> <span
-						class="fa fa-home mr-3"></span> Ajouter une destination
-				</a></li>
-				<li><a href="/destination/gestionDestination"><span
-						class="fa fa-gift mr-3"></span> Gestion des destinations</a></li>
+				<li class="active">
+					<a href="/destination/addDestination">
+						<span class="fa fa-home mr-3"></span> 
+						Ajouter une destination
+					</a>
+				</li>
+				<li><a href="/destination/gestionDestination"><span class="fa fa-gift mr-3"></span>
+						Gestion des destinations</a></li>
 				<li><a href="/AddserviceHebergement"><span class="fa fa-trophy mr-3"></span>Ajouter
 						des espaces d'hebergement</a></li>
-				<li><a href="#"><span class="fa fa-cog mr-3"></span>
-						Gestion des moyens de transport</a></li>
-				<li><a href="#"><span class="fa fa-support mr-3"></span>
+				<li><a href="/gestionHebergement"><span class="fa fa-support mr-3"></span>
 						Gestion des services d'hebergement</a></li>
-				<li><a href="#"><span class="fa fa-sign-out mr-3"></span>
+				<li><a href="/comptes/logout"><span class="fa fa-sign-out mr-3"></span>
 						Sign Out</a></li>
 			</ul>
 
@@ -103,32 +104,34 @@
 				<table class="table table-striped">
 					<thead>
 						<tr>
-
 							<th>id</th>
 							<th>nom</th>
 							<th>emplacement</th>
 							<th>Gestion</th>
-							
-
+							<th>Destination vue</th>
 						</tr>
 					</thead>
 					<tbody>
+					
 						<tr th:each="destination : ${ListPlages}">
 							<td  th:utext="${destination.id}"></td>
 							<td  th:utext="${destination.nom}"></td>
 							<td  th:utext="${destination.emplacement}"></td>
-							
-							<td><button  class="btn btn-outline-danger"><a th:href="@{${'/destination/delete/'+destination.id}}">Supprimer</a></button>
-								<button  class="btn btn-outline-secondary" ><a th:href="@{${'/destination/edit/'+destination.id}}">Modifier</button>
-								<button  class="btn btn-outline-info"><a>Details</button>
+							<td>
+								<div  class="btn btn-outline-danger">
+									<a th:href="@{${'/destination/delete/'+destination.id}}">Supprimer</a>
+								</div>
+								<div  class="btn btn-outline-secondary" >
+									<a th:href="@{${'/destination/edit/'+destination.id}}">Modifier</a>
+								</div>
+								<div  class="btn btn-outline-info">
+									<a th:href="@{${'/destination/details/'+destination.id}}">Details</a>
+								</div>
+							</td>
+						
 								
-									
-							</td>	
-
 						</tr>
-
 					</tbody>
-
 				</table>
 			</div>
 		</div>
@@ -140,13 +143,10 @@
 				<table class="table table-striped">
 					<thead>
 						<tr>
-
 							<th>id</th>
 							<th>nom</th>
 							<th>emplacement</th>
 							<th>Gestion</th>
-							
-
 						</tr>
 					</thead>
 					<tbody>
@@ -154,18 +154,9 @@
 							<td  th:utext="${destination.id}"></td>
 							<td  th:utext="${destination.nom}"></td>
 							<td  th:utext="${destination.emplacement}"></td>
-							
-							<td><button  class="btn btn-outline-danger"><a th:href="@{${'/destination/delete/'+destination.id}}">Supprimer</a></button>
-								<button  class="btn btn-outline-secondary" ><a th:href="@{${'/destination/edit/'+destination.id}}">Modifier</button>
-								<button  class="btn btn-outline-info"><a>Details</button>
-								
-									
-							</td>	
-
+							<td></td>	
 						</tr>
-
 					</tbody>
-
 				</table>
 			</div>
 		</div>
@@ -177,13 +168,10 @@
 				<table class="table table-striped">
 					<thead>
 						<tr>
-
 							<th>id</th>
 							<th>nom</th>
 							<th>emplacement</th>
 							<th>Gestion</th>
-							
-
 						</tr>
 					</thead>
 					<tbody>
@@ -191,18 +179,20 @@
 							<td  th:utext="${destination.id}"></td>
 							<td  th:utext="${destination.nom}"></td>
 							<td  th:utext="${destination.emplacement}"></td>
-							
-							<td><button  class="btn btn-outline-danger"><a th:href="@{${'/destination/delete/'+destination.id}}">Supprimer</a></button>
-								<button  class="btn btn-outline-secondary" ><a th:href="@{${'/destination/edit/'+destination.id}}">Modifier</button>
-								<button  class="btn btn-outline-info"><a>Details</button>
-								
-									
+							<td>
+								<div  class="btn btn-outline-danger btn-test">
+									<a th:href="@{${'/destination/delete/'+destination.id}}">Supprimer</a>
+								</div>
+								<div  class="btn btn-outline-secondary" >
+									<a th:href="@{${'/destination/edit/'+destination.id}}">Modifier</a>
+								</div>
+								<div  class="btn btn-outline-info">
+									<a href="test">Details</a>
+								</div>
 							</td>	
-
+						<td><img th:src="././images2/img_1.jpg"} alt="image" /></td> 
 						</tr>
-
 					</tbody>
-
 				</table>
 			</div>
 		</div>
@@ -230,3 +220,20 @@
 			th:src="@{/js/global.js}"></script>
 </body>
 </html>
+
+<!-- 
+								<div  class="btn btn-outline-danger bouton-test">
+									<a th:href="@{${'/destination/delete/'+destination.id}}">Supprimer</a>
+								</div>
+								<div class="btn btn-outline-secondary">
+									<a th:href="@{${'/destination/edit/'+destination.id}}">Modifier</a>
+								</div>
+								<div class="btn btn-outline-info">
+									<a href="Test">Details</a>
+								</div>
+								
+								<img th:src="@{${'/imagesComptes/' + destination.id ayers.name + '.jpeg'}}" width="120"/>
+								<div class="img">
+									<img th:src="@{/images2/full_image_1.jpg}"/>
+								</div>
+ -->

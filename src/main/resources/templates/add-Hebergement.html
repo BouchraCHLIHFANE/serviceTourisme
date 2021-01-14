@@ -74,43 +74,36 @@
 				</button>
 			</div>
 			<div class="img bg-wrap text-center py-4"
-				th:style="'background-image: url(' + @{/images/bg_1.jpg} + ')'">
+				 th:style="'background-image: url(' + @{/images/bg_1.jpg} + ')'">
 				<div class="user-logo">
 					<div class="img"
-						style="background-image: url(static/images/logo.jpg);"></div>
+						 style="background-image: url(static/images/logo.jpg);"></div>
 					<h3>Catriona Henderson</h3>
 				</div>
 			</div>
 			<ul class="list-unstyled components mb-5">
-				<li class="active"><a href="/destination/addDestination"> <span
-						class="fa fa-home mr-3"></span> Ajouter une destination
-				</a></li>
-				<li><a href="/destination/gestionDestination"><span
-						class="fa fa-gift mr-3"></span> Gestion des destinations</a></li>
-				<li><a href="#"><span class="fa fa-trophy mr-3"></span>Ajouter
-						des moyens de transport</a></li>
-				<li><a href="/AddserviceHebergement"><span
-						class="fa fa-trophy mr-3"></span>Ajouter des espaces d'hebergement</a></li>
-				<li><a href="#"><span class="fa fa-support mr-3"></span>
+				<li class="active">
+					<a href="/destination/addDestination">
+						<span class="fa fa-home mr-3"></span> 
+						Ajouter une destination
+					</a>
+				</li>
+				<li><a href="/destination/gestionDestination"><span class="fa fa-gift mr-3"></span>
+						Gestion des destinations</a></li>
+				<li><a href="/AddserviceHebergement"><span class="fa fa-trophy mr-3"></span>Ajouter
+						des espaces d'hebergement</a></li>
+				<li><a href="/gestionHebergement"><span class="fa fa-support mr-3"></span>
 						Gestion des services d'hebergement</a></li>
-				<li><a href="#"><span class="fa fa-sign-out mr-3"></span>
+				<li><a href="/comptes/logout"><span class="fa fa-sign-out mr-3"></span>
 						Sign Out</a></li>
 			</ul>
 
 		</nav>
-		
-			
-			
-			
 		<div style="margin-left: 10%">
 			<div class="wrapper wrapper--w680">
 				<div class="card card-4">
 					<div class="card-body">
-						<div th:if="${ alertMsg.length() !=0 }">
-							<p th:text="${ message }"></p>
-							<p>hello</p>
-						</div>
-
+						
 						<h2 class="title">Ajouter un nouveau service d'hebergement</h2>
 						<form th:action="@{/addserviceHebergement}"
 							th:object="${serviceHebergement}" method="post">
@@ -133,11 +126,7 @@
 										style="height: 100px" class="input--style-4" type="textarea"
 										name="tarifs" th:field="*{tarifs}">
 								</div>
-								<div class="input-group">
-									<label class="label">Details </label> <input
-										style="height: 100px" class="input--style-4" type="textarea"
-										name="details" th:field="*{details}">
-								</div>
+								
 								<!--  
 							<div class="col-md-5">
 									<select name="department.departmentId" class="form-contol select" required="required">

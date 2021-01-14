@@ -1,5 +1,6 @@
 package com.example.models;
 
+import java.beans.Transient;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -48,19 +49,27 @@ public class Destination {
 	
 	@Column(name = "type")
 	String type;
+	/*
+	@Column(name = "photo" ,nullable = true, length = 64,columnDefinition = "LONGBLOB")
+    private String profilePicture;
+	*/
 	
 	@Lob
-    @Basic(fetch = FetchType.LAZY)
-    private byte[] profilePicture;
+	@Column(columnDefinition = "LONGBLOB")
+	private String ProfilePicture;
+   
 
-	public byte[] getProfilePicture() {
-		return profilePicture;
-	}
+	// Pour autoriser l'accès au répertoire user-photos dans le système de fichiers
+	
+	/*
+	@Transient
+    public String getPhotosImagePath() {
+        if (profilePicture == null || id == null) return null;
+         
+        return "/imagesComptes/" + id + "/" + profilePicture;
+    }
 
-	public void setProfilePicture(byte[] profilePicture) {
-		this.profilePicture = profilePicture;
-	}
-
+*/
 	@ManyToMany(cascade = { CascadeType.PERSIST, CascadeType.MERGE,
 
 	})
@@ -69,10 +78,30 @@ public class Destination {
 
 	@OneToMany(targetEntity=ServiceHebergement.class, mappedBy="destination",cascade=CascadeType.ALL, fetch = FetchType.LAZY)    
 	private List<ServiceHebergement> servicesHebergement = new ArrayList<>();
-	
+	/*
+
+	public String getProfilePicture() {
+		return profilePicture;
+	}
+
+	public void setProfilePicture(String profilePicture) {
+		this.profilePicture = profilePicture;
+	}
+	*/
 	public List<Personne> getPersonnes() {
 		return personnes;
 	}
+
+
+	public String getProfilePicture() {
+		return ProfilePicture;
+	}
+
+
+	public void setProfilePicture(String profilePicture) {
+		ProfilePicture = profilePicture;
+	}
+
 
 	public void setPersonnes(List<Personne> personnes) {
 		this.personnes = personnes;

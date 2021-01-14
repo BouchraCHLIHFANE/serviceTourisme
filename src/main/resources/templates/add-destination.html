@@ -90,13 +90,11 @@
 				</li>
 				<li><a href="/destination/gestionDestination"><span class="fa fa-gift mr-3"></span>
 						Gestion des destinations</a></li>
-				<li><a href="#"><span class="fa fa-trophy mr-3"></span>Ajouter
-						des moyens de transport</a></li>
 				<li><a href="/AddserviceHebergement"><span class="fa fa-trophy mr-3"></span>Ajouter
 						des espaces d'hebergement</a></li>
-				<li><a href="#"><span class="fa fa-support mr-3"></span>
+				<li><a href="/gestionHebergement"><span class="fa fa-support mr-3"></span>
 						Gestion des services d'hebergement</a></li>
-				<li><a href="#"><span class="fa fa-sign-out mr-3"></span>
+				<li><a href="/comptes/logout"><span class="fa fa-sign-out mr-3"></span>
 						Sign Out</a></li>
 			</ul>
 
@@ -109,9 +107,11 @@
 						<p th:text = "${nameSession}"></p>
 						<p th:text = "${emailSession}"></p>
 						 -->
-						<h2 class="title">Registration Form</h2>
+						<h2 class="title">Ajouter Votre destination:</h2>
 						<form th:action="@{/destination/addDestination}"
-							th:object="${destination}" method="post">
+							  th:object="${destination}" 
+							  method="post"
+							  enctype="multipart/form-data">
 							<div class="row row-space">
 								<label class="label">nom d'endroit </label> <input
 									class="input--style-4" type="text" name="nom" th:field="*{nom}">
@@ -148,7 +148,12 @@
 											type="radio" checked="checked" value="foret" name="type"
 											th:field="*{type}"> <span class="checkmark"></span>
 										</label>
+									
 									</div>
+								</div>
+								<div class="input-group">
+									<label class="label">informations </label> 
+									<input type="file" name="picture" id="picture"   />
 								</div>
 							</div>
 							<input type="submit" value="Submit" style= "background-color: #008CBA;width: 50%; height: 50px; margin-left: 40%"		/> 		

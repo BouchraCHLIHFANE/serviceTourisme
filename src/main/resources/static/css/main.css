@@ -640,3 +640,8 @@ input {
     padding: 50px 40px;
   }
 }
+
+.destination-pic {
+	height: 20px;
+	width: 20px;
+}
