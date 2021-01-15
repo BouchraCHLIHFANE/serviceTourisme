@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-	<head>
-		<head th:include="fragments/head :: head" th:remove="tag"/>
-	</head>
-<body >
-		<section th:include="fragments/header::header" th:remove="tag"></section>
-		<div style="display :block">
-		<div class="panel panel-primary" style="margin-left: 50px; margin-bottom: 50px; width: 900px; height:auto; " >
-			<div class="panel-heading" >
-				Liste des plages d'alhoceima
-			</div>
+<head>
+<head th:include="fragments/head :: head" th:remove="tag" />
+</head>
+<body>
+	<section th:include="fragments/header::header" th:remove="tag"></section>
+	<div style="display: block">
+		<div class="panel panel-primary"
+			style="margin-left: 50px; margin-bottom: 50px; width: 900px; height: auto;">
+			<div class="panel-heading">Liste des plages d'alhoceima</div>
 			<div class="panel-body">
 				<table class="table table-striped">
 					<thead>
@@ -20,32 +19,44 @@
 						</tr>
 					</thead>
 					<tbody>
-					
+
 						<tr th:each="destination : ${ListPlages}">
-							<td  th:utext="${destination.nom}"></td>
-							<td  th:utext="${destination.emplacement}"></td>
-							<td>
-								<div  class="btn btn-outline-danger">
-									<a th:href="@{${'/destination/delete/'+destination.id}}">Supprimer</a>
-								</div>
-								<div  class="btn btn-outline-secondary" >
-									<a th:href="@{${'/destination/edit/'+destination.id}}">Modifier</a>
-								</div>
-								<div  class="btn btn-outline-info">
-									<a th:href="@{${'/destination/details/'+destination.id}}">Details</a>
-								</div>
+							<td th:utext="${destination.nom}"></td>
+							<td th:utext="${destination.emplacement}"></td>
+							<td >
+									<div style="display:inline;">
+										<a th:href="@{${'/destination/delete/'+destination.id}}"
+											title="Supprimer"> <img
+											th:src="@{../../../images2/icone_supp.png}"
+											src="images2/icone_supp.png"
+											style="width: 40px; height: 40px" />
+										</a>
+									</div>
+									<div style="display:inline;">
+										<a th:href="@{${'/destination/edit/'+destination.id}}"
+											title="Edit"> <img
+											th:src="@{../../../images2/edit.jpg}"
+											src="images2/edit.jpg"
+											style="width: 40px; height: 40px" />
+										</a>
+									</div>
+									<div style="display:inline;">
+										<a th:href="@{${'/destination/details/'+destination.id}}"
+											title="Details"> <img
+											th:src="@{../../../images2/details.png}"
+											src="images2/details.png"
+											style="width: 50px; height: 50px" />
+										</a>
+									</div>
 							</td>
-						
-								
 						</tr>
 					</tbody>
 				</table>
 			</div>
 		</div>
-		<div class="panel panel-primary" style="margin-left: 50px; margin-bottom: 50px;  width: 900px; height:auto;  " >
-			<div class="panel-heading">
-				Liste des Montagnes d'alhoceima
-			</div>
+		<div class="panel panel-primary"
+			style="margin-left: 50px; margin-bottom: 50px; width: 900px; height: auto;">
+			<div class="panel-heading">Liste des Montagnes d'alhoceima</div>
 			<div class="panel-body">
 				<table class="table table-striped">
 					<thead>
@@ -57,18 +68,42 @@
 					</thead>
 					<tbody>
 						<tr th:each="destination : ${ListMontagnes}">
-							<td  th:utext="${destination.nom}"></td>
-							<td  th:utext="${destination.emplacement}"></td>
-							<td></td>	
+							<td th:utext="${destination.nom}"></td>
+							<td th:utext="${destination.emplacement}"></td>
+							<td >
+									<div style="display:inline;">
+										<a th:href="@{${'/destination/delete/'+destination.id}}"
+											title="Supprimer"> <img
+											th:src="@{../../../images2/icone_supp.png}"
+											src="images2/icone_supp.png"
+											style="width: 40px; height: 40px" />
+										</a>
+									</div>
+									<div style="display:inline;">
+										<a th:href="@{${'/destination/edit/'+destination.id}}"
+											title="Edit"> <img
+											th:src="@{../../../images2/edit.jpg}"
+											src="images2/edit.jpg"
+											style="width: 40px; height: 40px" />
+										</a>
+									</div>
+									<div style="display:inline;">
+										<a th:href="@{${'/destination/details/'+destination.id}}"
+											title="Details"> <img
+											th:src="@{../../../images2/details.png}"
+											src="images2/details.png"
+											style="width: 50px; height: 50px" />
+										</a>
+									</div>
+							</td>
 						</tr>
 					</tbody>
 				</table>
 			</div>
 		</div>
-		<div class="panel panel-primary" style="margin-left: 50px; margin-bottom: 50px; width: 900px; ">
-			<div class="panel-heading" >
-				Liste des Forets d'Alhoceima
-			</div>
+		<div class="panel panel-primary"
+			style="margin-left: 50px; margin-bottom: 50px; width: 900px;">
+			<div class="panel-heading">Liste des Forets d'Alhoceima</div>
 			<div class="panel-body">
 				<table class="table table-striped">
 					<thead>
@@ -80,47 +115,62 @@
 					</thead>
 					<tbody>
 						<tr th:each="destination : ${ListForets}">
-							<td  th:utext="${destination.nom}"></td>
-							<td  th:utext="${destination.emplacement}"></td>
-							<td>
-								<div  class="btn btn-outline-danger btn-test">
-									<a th:href="@{${'/destination/delete/'+destination.id}}">Supprimer</a>
-								</div>
-								<div  class="btn btn-outline-secondary" >
-									<a th:href="@{${'/destination/edit/'+destination.id}}">Modifier</a>
-								</div>
-								<div  class="btn btn-outline-info">
-									<a href="test">Details</a>
-								</div>
-							</td>	
-						
+							<td th:utext="${destination.nom}"></td>
+							<td th:utext="${destination.emplacement}"></td>
+							<td >
+									<div style="display:inline;">
+										<a th:href="@{${'/destination/delete/'+destination.id}}"
+											title="Supprimer"> <img
+											th:src="@{../../../images2/icone_supp.png}"
+											src="images2/icone_supp.png"
+											style="width: 40px; height: 40px" />
+										</a>
+									</div>
+									<div style="display:inline;">
+										<a th:href="@{${'/destination/edit/'+destination.id}}"
+											title="Edit"> <img
+											th:src="@{../../../images2/edit.jpg}"
+											src="images2/edit.jpg"
+											style="width: 40px; height: 40px" />
+										</a>
+									</div>
+									<div style="display:inline;">
+										<a th:href="@{${'/destination/details/'+destination.id}}"
+											title="Details"> <img
+											th:src="@{../../../images2/details.png}"
+											src="images2/details.png"
+											style="width: 50px; height: 50px" />
+										</a>
+									</div>
+							</td>
+
 						</tr>
 					</tbody>
 				</table>
 			</div>
 		</div>
 	</div>
-		<!-- Jquery JS-->
-		<script type="text/javascript"
-			src="../static/vendor/jquery/jquery.min.js"
-			th:src="@{/vendor/jquery/jquery.min.js}"></script>
+	<!-- Jquery JS-->
+	<script type="text/javascript"
+		src="../static/vendor/jquery/jquery.min.js"
+		th:src="@{/vendor/jquery/jquery.min.js}"></script>
 
-		<!-- Vendor JS-->
-		<script type="text/javascript"
-			src="../static/vendor/select2/select2.min.js"
-			th:src="@{/vendor/select2/select2.min.js}"></script>
+	<!-- Vendor JS-->
+	<script type="text/javascript"
+		src="../static/vendor/select2/select2.min.js"
+		th:src="@{/vendor/select2/select2.min.js}"></script>
 
-		<script type="text/javascript"
-			src="../static/vendor/datepicker/moment.min.js"
-			th:src="@{/vendor/datepicker/moment.min.js}"></script>
+	<script type="text/javascript"
+		src="../static/vendor/datepicker/moment.min.js"
+		th:src="@{/vendor/datepicker/moment.min.js}"></script>
 
-		<script type="text/javascript"
-			src="../static/vendor/datepicker/daterangepicker.js"
-			th:src="@{/vendor/datepicker/daterangepicker.js}"></script>
+	<script type="text/javascript"
+		src="../static/vendor/datepicker/daterangepicker.js"
+		th:src="@{/vendor/datepicker/daterangepicker.js}"></script>
 
-		<!-- Main JS-->
-		<script type="text/javascript" src="../static/js/global.js"
-			th:src="@{/js/global.js}"></script>
+	<!-- Main JS-->
+	<script type="text/javascript" src="../static/js/global.js"
+		th:src="@{/js/global.js}"></script>
 </body>
 </html>
 

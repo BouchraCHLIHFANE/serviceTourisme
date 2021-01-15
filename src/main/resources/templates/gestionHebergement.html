@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-	<head>
-		<head th:include="fragments/head :: head" th:remove="tag"/>
-	</head>
+<head>
+<head th:include="fragments/head :: head" th:remove="tag" />
+</head>
 
 <body>
-		<section th:include="fragments/header::header" th:remove="tag"></section>
-		<div style="display :block">
-		<div class="panel panel-primary" style="margin-left: 50px; margin-bottom: 50px; width: 900px; height:auto; " >
-			<div class="panel-heading" >
-				Liste des hotels d'alhoceima
-			</div>
+	<section th:include="fragments/header::header" th:remove="tag"></section>
+	<div style="display: block">
+		<div class="panel panel-primary"
+			style="margin-left: 50px; margin-bottom: 50px; width: 900px; height: auto;">
+			<div class="panel-heading">Liste des hotels d'alhoceima</div>
 			<div class="panel-body">
 				<table class="table table-striped">
 					<thead>
@@ -19,156 +18,148 @@
 							<th>tarifs</th>
 							<th>classification</th>
 							<th>Gestion</th>
-					
-							
+
+
 						</tr>
 					</thead>
 					<tbody>
-						
+
 						<tr th:each="hotel : ${hotels}">
-							<td  th:utext="${hotel.nom}"></td>
-							<td  th:utext="${hotel.tarifs}"></td>
-							<td  th:utext="${hotel.classification}"></td>
-						
-						
-							<td>
-								<div  class="btn btn-outline-danger">
-								
-								<a th:href="@{${'/delete/'+hotel.id}}">Supprimer</a>
-								</div>
-								<div  class="btn btn-outline-danger">
-								
-								<a th:href="@{${'/edit/'+hotel.id}}">Modifier</a>
-								</div>
-								
-								
-								</td>
-								
-									<!-- 
-								<div  class="btn btn-outline-secondary" >
-									<a th:href="#">Modifier</a>
-								</div>
-								<div  class="btn btn-outline-info">
-									<a th:href="#">Details</a>
-								</div>
-							</td>
-						-->
-								
-						</tr>
-					</tbody>
-				</table>
-			</div>
-			</div>
-			<div class="panel panel-primary" style="margin-left: 50px; margin-bottom: 50px; width: 900px; height:auto; " >
-			<div class="panel-heading" >
-				Liste des motels d'alhoceima
-			</div>
-			<div class="panel-body">
-				<table class="table table-striped">
-					<thead>
-						<tr>
-							<th>nom</th>
-							<th>tarifs</th>
-							<th>classification</th>
-							<th>Gestion</th>
-					
-						</tr>
-					</thead>
-					<tbody>
-						
-						<tr th:each="motel : ${motels}">
-							<td  th:utext="${motel.nom}"></td>
-							<td  th:utext="${motel.tarifs}"></td>
-							<td  th:utext="${motel.classification}"></td>
-							
-						
-							<td>
-									<div class="btn btn-outline-danger">
-										<a th:href="@{${'/delete/'+motel.id}}">Supprimer</a>
-									</div>
-									<div class="btn btn-outline-danger">
+							<td th:utext="${hotel.nom}"></td>
+							<td th:utext="${hotel.tarifs}"></td>
+							<td th:utext="${hotel.classification}"></td>
 
-										<a th:href="@{${'/edit/'+motel.id}}">Modifier</a>
-									</div>
+							<td>
+								<div style="display: inline;">
+									<a th:href="@{${'/delete/'+hotel.id}}" title="Supprimer"> <img
+										th:src="@{../../../images2/icone_supp.png}"
+										src="images2/icone_supp.png" style="width: 40px; height: 40px" />
+									</a>
+								</div>
+								<div style="display: inline;">
+									<a th:href="@{${'/edit/'+hotel.id}}" title="Edit"> <img
+										th:src="@{../../../images2/edit.jpg}" src="images2/edit.jpg"
+										style="width: 40px; height: 40px" />
+									</a>
+								</div>
 
-								</td>
-								
-						</tr>
-					</tbody>
-				</table>
-			</div> </div>
-			<div class="panel panel-primary" style="margin-left: 50px; margin-bottom: 50px; width: 900px; height:auto; " >
-			<div class="panel-heading" >
-				Liste des auberges d'alhoceima
-			</div>
-			<div class="panel-body">
-				<table class="table table-striped">
-					<thead>
-						<tr>
-							<th>nom</th>
-							<th>tarifs</th>
-							<th>classification</th>
-							<th>Gestion</th>
-					
-						</tr>
-					</thead>
-					<tbody>
-						
-						<tr th:each="auberge : ${auberges}">
-							<td  th:utext="${auberge.nom}"></td>
-							<td  th:utext="${auberge.tarifs}"></td>
-							<td  th:utext="${auberge.classification}"></td>
-							<td>
-								<div  class="btn btn-outline-danger">
-									<a th:href="@{${'/delete/'+auberge.id}}">Supprimer</a> 
-								</div>
-								<div  class="btn btn-outline-danger">
-								
-								<a th:href="@{${'/edit/'+auberge.id}}">Modifier</a>
-								</div>
 							</td>
-							<!-- 
-							<td>
-								<div  class="btn btn-outline-danger">
-								
-								<a th:href="#">Supprimer</a>
-								</div>
-								<div  class="btn btn-outline-secondary" >
-									<a th:href="#">Modifier</a>
-								</div>
-								<div  class="btn btn-outline-info">
-									<a th:href="#">Details</a>
-								</div>
-							</td>
-						-->
-								
+
 						</tr>
 					</tbody>
 				</table>
 			</div>
-			
 		</div>
-		  </div></div>
-		<!-- Jquery JS-->
-		<script type="text/javascript"
-			src="../static/vendor/jquery/jquery.min.js"
-			th:src="@{/vendor/jquery/jquery.min.js}"></script>
+		<div class="panel panel-primary"
+			style="margin-left: 50px; margin-bottom: 50px; width: 900px; height: auto;">
+			<div class="panel-heading">Liste des motels d'alhoceima</div>
+			<div class="panel-body">
+				<table class="table table-striped">
+					<thead>
+						<tr>
+							<th>nom</th>
+							<th>tarifs</th>
+							<th>classification</th>
+							<th>Gestion</th>
 
-		<!-- Vendor JS-->
-		<script type="text/javascript"
-			src="../static/vendor/select2/select2.min.js"
-			th:src="@{/vendor/select2/select2.min.js}"></script>
+						</tr>
+					</thead>
+					<tbody>
 
-		<script type="text/javascript"
-			src="../static/vendor/datepicker/moment.min.js"
-			th:src="@{/vendor/datepicker/moment.min.js}"></script>
+						<tr th:each="motel : ${motels}">
+							<td th:utext="${motel.nom}"></td>
+							<td th:utext="${motel.tarifs}"></td>
+							<td th:utext="${motel.classification}"></td>
 
-		<script type="text/javascript"
-			src="../static/vendor/datepicker/daterangepicker.js"
-			th:src="@{/vendor/datepicker/daterangepicker.js}"></script>
+							<td>
+								<div style="display: inline;">
+									<a th:href="@{${'/delete/'+motel.id}}" title="Supprimer"> <img
+										th:src="@{../../../images2/icone_supp.png}"
+										src="images2/icone_supp.png" style="width: 40px; height: 40px" />
+									</a>
+								</div>
+								<div style="display: inline;">
+									<a th:href="@{${'/edit/'+motel.id}}" title="Edit"> <img
+										th:src="@{../../../images2/edit.jpg}" src="images2/edit.jpg"
+										style="width: 40px; height: 40px" />
+									</a>
+								</div>
 
-		<!-- Main JS-->
-		<script type="text/javascript" src="../static/js/global.js"
-			th:src="@{/js/global.js}"></script>
+							</td>
+
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div class="panel panel-primary"
+			style="margin-left: 50px; margin-bottom: 50px; width: 900px; height: auto;">
+			<div class="panel-heading">Liste des auberges d'alhoceima</div>
+			<div class="panel-body">
+				<table class="table table-striped">
+					<thead>
+						<tr>
+							<th>nom</th>
+							<th>tarifs</th>
+							<th>classification</th>
+							<th>Gestion</th>
+
+						</tr>
+					</thead>
+					<tbody>
+
+						<tr th:each="auberge : ${auberges}">
+							<td th:utext="${auberge.nom}"></td>
+							<td th:utext="${auberge.tarifs}"></td>
+							<td th:utext="${auberge.classification}"></td>
+							<td>
+								<div style="display: inline;">
+									<a th:href="@{${'/delete/'+auberge.id}}" title="Supprimer">
+										<img th:src="@{../../../images2/icone_supp.png}"
+										src="images2/icone_supp.png" style="width: 40px; height: 40px" />
+									</a>
+								</div>
+								<div style="display: inline;">
+									<a th:href="@{${'/edit/'+auberge.id}}" title="Edit"> <img
+										th:src="@{../../../images2/edit.jpg}" src="images2/edit.jpg"
+										style="width: 40px; height: 40px" />
+									</a>
+								</div>
+								<div style="display: inline;">
+									<a title="Details"> <img
+										th:src="@{../../../images2/details.png}"
+										src="images2/details.png" style="width: 50px; height: 50px" />
+									</a>
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+
+		</div>
+	</div>
+	</div>
+	<!-- Jquery JS-->
+	<script type="text/javascript"
+		src="../static/vendor/jquery/jquery.min.js"
+		th:src="@{/vendor/jquery/jquery.min.js}"></script>
+
+	<!-- Vendor JS-->
+	<script type="text/javascript"
+		src="../static/vendor/select2/select2.min.js"
+		th:src="@{/vendor/select2/select2.min.js}"></script>
+
+	<script type="text/javascript"
+		src="../static/vendor/datepicker/moment.min.js"
+		th:src="@{/vendor/datepicker/moment.min.js}"></script>
+
+	<script type="text/javascript"
+		src="../static/vendor/datepicker/daterangepicker.js"
+		th:src="@{/vendor/datepicker/daterangepicker.js}"></script>
+
+	<!-- Main JS-->
+	<script type="text/javascript" src="../static/js/global.js"
+		th:src="@{/js/global.js}"></script>
 </body>
 </html>
