@@ -1,0 +1,36 @@
+<section th:fragment = "header">
+
+<div class="wrapper d-flex align-items-stretch">
+		<nav id="sidebar">
+			<div class="custom-menu">
+				<button type="button" id="sidebarCollapse" class="btn btn-primary">
+				</button>
+			</div>
+			<div class="img bg-wrap text-center py-4"
+				 th:style="'background-image: url(' + @{/images/bg_1.jpg} + ')'">
+				<div class="user-logo">
+					<div class="img"
+						 style="background-image: url(static/images/logo.jpg);"></div>
+					<h3>Catriona Henderson</h3>
+				</div>
+			</div>
+			<ul class="list-unstyled components mb-5">
+				<li class="active">
+					<a href="/destination/addDestination">
+						<span class="fa fa-home mr-3"></span> 
+						Ajouter une destination
+					</a>
+				</li>
+				<li><a href="/destination/gestionDestination"><span class="fa fa-gift mr-3"></span>
+						Gestion des destinations</a></li>
+				<li><a href="/AddserviceHebergement"><span class="fa fa-trophy mr-3"></span>Ajouter
+						des espaces d'hebergement</a></li>
+				<li><a href="/gestionHebergement"><span class="fa fa-support mr-3"></span>
+						Gestion des services d'hebergement</a></li>
+				<li><a href="/comptes/logout"><span class="fa fa-sign-out mr-3"></span>
+						Sign Out</a></li>
+			</ul>
+
+		</nav>
+		
+</section>

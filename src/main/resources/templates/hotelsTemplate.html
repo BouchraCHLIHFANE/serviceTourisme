@@ -1,0 +1,440 @@
+
+<!DOCTYPE html >
+<html xmlns:th="http://www.thymeleaf.org">
+<html class="no-js">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Accueil : : Alhoceima</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Free HTML5 Template by FREEHTML5.CO" />
+<meta name="keywords"
+	content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive" />
+<meta name="author" content="FREEHTML5.CO" />
+<link rel="shortcut icon" href="favicon.ico">
+<link
+	href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,600,400italic,700'
+	rel='stylesheet' type='text/css'>
+
+<link rel="stylesheet" href="../static/css2/animate.css"
+	th:href="@{/css2/animate.css}">
+<link rel="stylesheet" href="../static/css2/flexslider.css"
+	th:href="@{/css2/flexslider.css}">
+<link rel="stylesheet" href="../static/css2/icomoon.css"
+	th:href="@{/css2/icomoon.css}">
+<link rel="stylesheet" href="../static/css2/magnific-popup.css"
+	th:href="@{/css2/magnific-popup.css}">
+<link rel="stylesheet" href="../static/css2/bootstrap.css"
+	th:href="@{/css2/bootstrap.css}">
+<link rel="stylesheet" href="../static/css2/style.css"
+	th:href="@{css2/style.css}">
+<link rel="stylesheet" id="theme-switch" href="../static/css2/style.css"
+	th:href="@{css2/style.css}">
+<style>
+#colour-variations {
+	padding: 10px;
+	-webkit-transition: 0.5s;
+	-o-transition: 0.5s;
+	transition: 0.5s;
+	width: 140px;
+	position: fixed;
+	left: 0;
+	top: 100px;
+	z-index: 999999;
+	background: #fff;
+	/*border-radius: 4px;*/
+	border-top-right-radius: 4px;
+	border-bottom-right-radius: 4px;
+	-webkit-box-shadow: 0 0 9px 0 rgba(0, 0, 0, .1);
+	-moz-box-shadow: 0 0 9px 0 rgba(0, 0, 0, .1);
+	-ms-box-shadow: 0 0 9px 0 rgba(0, 0, 0, .1);
+	box-shadow: 0 0 9px 0 rgba(0, 0, 0, .1);
+}
+
+#colour-variations.sleep {
+	margin-left: -140px;
+}
+
+#colour-variations h3 {
+	text-align: center;;
+	font-size: 11px;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	color: #777;
+	margin: 0 0 10px 0;
+	padding: 0;;
+}
+
+#colour-variations ul, #colour-variations ul li {
+	padding: 0;
+	margin: 0;
+}
+
+#colour-variations ul {
+	margin-bottom: 20px;
+	float: left;
+}
+
+#colour-variations li {
+	list-style: none;
+	display: inline;
+}
+
+#colour-variations li a {
+	width: 20px;
+	height: 20px;
+	position: relative;
+	float: left;
+	margin: 5px;
+}
+
+#colour-variations li a[data-theme="style"] {
+	background: #8dc63f;
+}
+
+#colour-variations li a[data-theme="red"] {
+	background: #FA5555;
+}
+
+#colour-variations li a[data-theme="turquoise"] {
+	background: #27E1CE;
+}
+
+#colour-variations li a[data-theme="blue"] {
+	background: #2772DB;
+}
+
+#colour-variations li a[data-theme="orange"] {
+	background: #FF7844;
+}
+
+#colour-variations li a[data-theme="yellow"] {
+	background: #FCDA05;
+}
+
+#colour-variations li a[data-theme="pink"] {
+	background: #F64662;
+}
+
+#colour-variations li a[data-theme="purple"] {
+	background: #7045FF;
+}
+
+#colour-variations a[data-layout="wide"] {
+	padding: 2px 0;
+	width: 48%;
+	border: 1px solid #ededed;
+	text-align: center;
+	color: #777;
+	display: block;
+}
+
+#colour-variations a[data-layout="boxed"]:hover, #colour-variations a[data-layout="wide"]:hover
+	{
+	border: 1px solid #777;
+}
+
+#colour-variations a[data-layout="boxed"] {
+	float: left;
+}
+
+#colour-variations a[data-layout="wide"] {
+	float: right;
+}
+
+.option-toggle {
+	position: absolute;
+	right: 0;
+	top: 0;
+	margin-top: 5px;
+	margin-right: -30px;
+	width: 30px;
+	height: 30px;
+	background: #8dc63f;
+	text-align: center;
+	border-top-right-radius: 4px;
+	border-bottom-right-radius: 4px;
+	color: #fff;
+	cursor: pointer;
+	-webkit-box-shadow: 0 0 9px 0 rgba(0, 0, 0, .1);
+	-moz-box-shadow: 0 0 9px 0 rgba(0, 0, 0, .1);
+	-ms-box-shadow: 0 0 9px 0 rgba(0, 0, 0, .1);
+	box-shadow: 0 0 9px 0 rgba(0, 0, 0, .1);
+}
+
+.option-toggle i {
+	top: 2px;
+	position: relative;
+}
+
+.option-toggle:hover, .option-toggle:focus, .option-toggle:active {
+	color: #fff;
+	text-decoration: none;
+	outline: none;
+}
+</style>
+<script src="../static/js2/modernizr-2.6.2.min.js"
+	th:src="@{/js2/modernizr-2.6.2.min.js}"></script>
+</head>
+<body>
+	<br>
+	<br>
+	<div id="fh5co-about">
+		<div class="container">
+			<div class="row row-bottom-padded-lg"></div>
+
+			<div class="row">
+				<div class="col-md-4 col-sm-6 col-xs-12">
+					<div class="fh5co-person">
+						<figure class="animate-box">
+							<img th:src="@{../../../images2/mercure.jpg}"
+								src="/images2/mercure.jpg" class="img-responsive">
+
+						</figure>
+						<h3 class="fh5co-name animate-box">Mercure Quemado Al-Hoceima
+							Resort</h3>
+						<br>
+						<p class="fh5co-bio animate-box">Dans son complexe lumineux et
+							moderne au bord de la plage, l'hôtel Mercure Quemado Resort
+							propose 169 chambres spacieuses et climatisées, équipées d'une
+							salle de bain privée et d'un accès gratuit au wifi. Vous invitant
+							à la détente, notre établissement met à votre disposition une
+							piscine extérieure, une salle de fitness, un spa, un bar et un
+							restaurant international. Il vous permet aussi d'organiser vos
+							rendez-vous professionnels grâce à ses 5 salles de réunion et son
+							centre d'affaires. L'hôtel Mercure Quemado Resort vous fera rêver
+							par ses vues panoramiques sur le golfe d'Al Hoceïma. En plus de
+							pouvoir profiter de la jolie plage de Quemado et d'y pratiquer
+							des sports nautiques, vous pourrez partir en randonnée dans le
+							parc national d'Al Hoceïma, situé à 20 minutes en voiture. Notre
+							établissement vous permettra aussi de bronzer sur les plages
+							toutes proches de Sfiha et de Cala Bonita et de rejoindre
+							l'aéroport international Al Hoceïma-Acharif Al Idrissi en moins
+							de 30 minutes de route.
+						<p>
+						<p>pour une reservation</p>
+						<a
+							href="https://www.google.com/travel/hotels/Al%20Hoce%C3%AFma/entity/ChgIouXoqa706oBdGgwvZy8xcTZjY19mdGcQAQ?g2lb=2502548%2C2503780%2C4258168%2C4270442%2C4306835%2C4317915%2C4328159%2C4371335%2C4401769%2C4419364%2C4428793%2C4463263%2C4463666%2C4464463%2C4482194%2C4482438%2C4488304%2C4270859%2C4284970%2C4291517%2C4464911&hl=fr-MA&gl=ma&un=1&ap=aAE&q=hotels%20alhoceima&rp=EKLl6Kmu9OqAXRCk_PXlkazF-rUBEOiT7YOCpNXh7gEQx4LA347aocduOAFAAEgCogELQWwgSG9jZcOvbWE&ictx=1&sa=X&ved=0CAAQ5JsGahcKEwjY5Y7jgZ7uAhUAAAAAHQAAAAAQAg&utm_campaign=sharing&utm_medium=link&utm_source=htls&hrf=CgUIoAYQACIDTUFEKhYKBwjlDxABGBESBwjlDxABGBIYASgAsAEAWAFoAZoBDRILQWwgSG9jZcOvbWGiARgKCS9tLzAzenZycBILQWwgSG9jZcOvbWGqAQoKAgghEgIIWxgBkgECIAE">cliquez
+							ici </a>
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-6 col-xs-12">
+					<div class="fh5co-person">
+						<figure class="animate-box">
+							<img th:src="@{../../../images2/hoceimaBay.jpg}"
+								src="/images2/hoceimaBay.jpg" class="img-responsive">
+						</figure>
+						<h3 class="fh5co-name animate-box">Hotel Souani (Hoceima Bay)</h3>
+						<br>
+						<p class="fh5co-bio animate-box">Offrant une vue sur les
+							montagnes, toutes les chambres et suites de l'Hôtel Souani
+							comprennent la climatisation, une télévision par satellite et une
+							connexion Wi-Fi gratuite. Sur place, vous pourrez déguster un
+							petit-déjeuner chaque matin, ainsi que des repas et des
+							collations tout au long de la journée. L'Hôtel Souani (Al Hoceima
+							Bay) dispose aussi d'un hammam, d'une salle de sport et d'un
+							service de massage dont vous profiterez moyennant un supplément.</p>
+						<p>Pour une reservation</p>
+						<a
+							href="https://www.google.com/travel/hotels/Al%20Hoce%C3%AFma/entity/ChkI6JPtg4Kk1eHuARoML2cvMTJ2dGpoZmg5EAE?g2lb=2502548%2C2503780%2C4258168%2C4270442%2C4306835%2C4317915%2C4328159%2C4371335%2C4401769%2C4419364%2C4428793%2C4463263%2C4463666%2C4464463%2C4482194%2C4482438%2C4488304%2C4270859%2C4284970%2C4291517%2C4464911&hl=fr-MA&gl=ma&un=1&ap=aAE&q=hotels%20alhoceima&rp=EKLl6Kmu9OqAXRCk_PXlkazF-rUBEOiT7YOCpNXh7gEQx4LA347aocduOAFAAEgCogELQWwgSG9jZcOvbWE&ictx=1&sa=X&ved=2ahUKEwjGm7HhgZ7uAhWR69UKHX79BckQv6wDegUIARDIAQ&utm_campaign=sharing&utm_medium=link&utm_source=htls&hrf=CgUIoAYQACIDTUFEKhYKBwjlDxABGBESBwjlDxABGBIYASgAsAEAWAFoAZoBDRILQWwgSG9jZcOvbWGiARgKCS9tLzAzenZycBILQWwgSG9jZcOvbWGqAQoKAgghEgIIWxgBkgECIAE">Cliquez
+							ici</a>
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-6 col-xs-12">
+					<div class="fh5co-person">
+						<figure class="animate-box">
+							<img th:src="@{../../../images2/laperla.jpg}"
+								src="/images2/laperla.jpg" class="img-responsive">
+						</figure>
+						<h3 class="fh5co-name animate-box">Hotel la Perla</h3>
+						<br>
+						<p class="fh5co-bio animate-box">Il est implanté à l’extrémité
+							Ouest de la baie d’Al-Hoceima et constitue la seule ouverture sur
+							la méditerranée de la région Centre Nord. Il est situé dans une
+							région enclavée derrière la chaîne montagneuse du Rif dont les
+							reliefs sont fortement accidentés. Avant 2003, les activités
+							principales étaient la pêche et la plaisance. Avec la mise en
+							service de la gare maritime en juillet 2003, le trafic passager
+							est devenu le levier principal pour le développement du trafic
+							commercial..</p>
+						<p>Pour une reservation Cliquez ici</p>
+						<a
+							href="https://www.google.com/travel/hotels/Al%20Hoce%C3%AFma/entity/ChkIpPz15ZGsxfq1ARoML2cvMTJoa3dxZDN3EAE?g2lb=2502548%2C2503780%2C4258168%2C4270442%2C4306835%2C4317915%2C4328159%2C4371335%2C4401769%2C4419364%2C4428793%2C4463263%2C4463666%2C4464463%2C4482194%2C4482438%2C4488304%2C4270859%2C4284970%2C4291517%2C4464911&hl=fr-MA&gl=ma&un=1&ap=aAE&q=hotels%20alhoceima&rp=EKLl6Kmu9OqAXRCk_PXlkazF-rUBEOiT7YOCpNXh7gEQx4LA347aocduOAFAAEgCogELQWwgSG9jZcOvbWE&ictx=1&sa=X&ved=2ahUKEwjluYvnhJ7uAhWB2dUKHTBxB2UQv6wDegUIARCYAQ&utm_campaign=sharing&utm_medium=link&utm_source=htls&hrf=CgUIoAYQACIDTUFEKhYKBwjlDxABGBESBwjlDxABGBIYASgAsAEAWAFoAZoBDRILQWwgSG9jZcOvbWGiARgKCS9tLzAzenZycBILQWwgSG9jZcOvbWGqAQoKAgghEgIIWxgBkgECIAE">Cliquez
+							ici</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+
+	<div id="fh5co-about">
+		<div class="container">
+			<div class="row row-bottom-padded-lg" style="background-color:;">
+				<div class="col-md-6">
+					<figure class="animate-box">
+						<img th:src="@{../../../images2/casaPaca.jpg}"
+							src="/images2/casaPaca.jpg" class="img-responsive">
+					</figure>
+				</div>
+				<div class="col-md-6">
+					<h2>Auberge casa Paca :</h2>
+					<p class="fh5co-sub-lead animate-box">La Casa Paca Alhucemas
+						Guesthouse B&B propose des hébergements à Al Hoceïma, à 300 mètres
+						de la plage de Sfiha. Cette maison d’hôtes bénéficie d’un jardin,
+						d’un salon commun, d’une terrasse et d’un stationnement privé
+						gratuit. Elle assure des services de voiturier et de transfert
+						aéroport. Sa réception est ouverte 24h/24, et une connexion Wi-Fi
+						est disponible gratuitement dans l’ensemble de l’établissement.</p>
+					<p>
+						Pour une reservation <a
+							href="https://www.google.com/travel/hotels/Al%20Hoce%C3%AFma/entity/ChcI77rtra-InY5dGgsvZy8xdjF2Zms2ZBAB?g2lb=2502548%2C2503780%2C4258168%2C4270442%2C4306835%2C4317915%2C4328159%2C4371335%2C4401769%2C4419364%2C4428793%2C4463263%2C4463666%2C4464463%2C4482194%2C4482438%2C4488304%2C4270859%2C4284970%2C4291517%2C4464911&hl=fr-MA&gl=ma&un=1&ap=aAE&q=hotels%20alhoceima&rp=EKLl6Kmu9OqAXRCk_PXlkazF-rUBEOiT7YOCpNXh7gEQx4LA347aocduOAFAAEgCogELQWwgSG9jZcOvbWE&ictx=1&sa=X&ved=2ahUKEwjLkOLMiJ7uAhWR69UKHX79BckQv6wDegUIARCAAQ&utm_campaign=sharing&utm_medium=link&utm_source=htls&hrf=CgUIoAYQACIDTUFEKhYKBwjlDxABGBESBwjlDxABGBIYASgAsAEAWAFoAZoBDRILQWwgSG9jZcOvbWGiARgKCS9tLzAzenZycBILQWwgSG9jZcOvbWGqAQoKAgghEgIIWxgBkgECIAE">Cliquez
+							ici </a>
+				</div>
+			</div>
+			<br> <br>
+
+
+			<div id="fh5co-about">
+				<div class="container">
+					<div class="row row-bottom-padded-lg"></div>
+
+					<div class="row">
+						<div class="col-md-4 col-sm-6 col-xs-12">
+							<div class="fh5co-person">
+								<figure class="animate-box">
+									<img th:src="@{../../../images2/Med5.jpg}"
+										src="/images2/Med5.jpg" class="img-responsive">
+
+								</figure>
+								<h3 class="fh5co-name animate-box">Hotel Mohammed VI</h3>
+								<br>
+								<p class="fh5co-bio animate-box">Situé à Al Hoceima, le
+									Suites Hotel Mohammed V by Accor est un hôtel en bord de mer
+									proposant des chambres avec vue sur la plage de Quemado et sur
+									la mer Méditerranée. Vous apprécierez le restaurant et le bar
+									de l'établissement. L'hôtel possède des suites dotées d'une
+									terrasse donnant sur la plage de Quemado et d'une salle de
+									bains privative avec baignoire et douche. Surplombant la mer,
+									le restaurant du Mohammed V, le Lbhar, sert une cuisine
+									internationale et des fruits de mer. Vous pourrez vous détendre
+									dans le bar Tagzirt, ouvert tous les jours.</p>
+								<p>
+									Pour une reservation <a
+										href="https://www.google.com/travel/hotels/Al%20Hoce%C3%AFma/entity/CgoIx4LA347aocduEAEae0FHWklFZ1pBVHFmLW1NSC1yYlp1Wks5cGlEd0JGZnl1V0wyZHNMQUZqcWJjQ3ZwRmQ1clVWWV8zYjItMV9JYTV6RVlxS3lZUm9uak05dUZpVjUyaHFSbS1nUjZKUWg2Und5TWEwUEw5RklSTzFjVXdfbXZqNTZTbUU2QQ?g2lb=2502548%2C2503780%2C4258168%2C4270442%2C4306835%2C4317915%2C4328159%2C4371335%2C4401769%2C4419364%2C4428793%2C4463263%2C4463666%2C4464463%2C4482194%2C4482438%2C4488304%2C4270859%2C4284970%2C4291517%2C4464911&hl=fr-MA&gl=ma&un=1&ap=aAE&q=hotels%20alhoceima&rp=EKLl6Kmu9OqAXRCk_PXlkazF-rUBEOiT7YOCpNXh7gEQx4LA347aocduOAFAAEgCogELQWwgSG9jZcOvbWE&ictx=1&sa=X&ved=2ahUKEwjhiq-Y953uAhWR69UKHX79BckQyfcEegUIARCaAQ&utm_campaign=sharing&utm_medium=link&utm_source=htls&hrf=CgUIoAYQACIDTUFEKhYKBwjlDxABGBESBwjlDxABGBIYASgAsAEAWAFoAZoBDRILQWwgSG9jZcOvbWGiARgKCS9tLzAzenZycBILQWwgSG9jZcOvbWGqAQoKAgghEgIIWxgBkgECIAE">Cliquez
+										ici </a>
+							</div>
+						</div>
+						<div class="col-md-4 col-sm-6 col-xs-12">
+							<div class="fh5co-person">
+								<figure class="animate-box">
+									<img th:src="@{../../../images2/miraPalace.jpg}"
+										src="/images2/miraPalace.jpg" class="img-responsive">
+								</figure>
+								<h3 class="fh5co-name animate-box">Hotel Mira palace</h3>
+								<br>
+								<p class="fh5co-bio animate-box">Le Mira Palace, qui possède
+									une réception ouverte 24h/24, est situé à 4 minutes de route du
+									centre d'Al Hoceïma et à 3 minutes de route de la côte. Il
+									propose une piscine extérieure et une terrasse pourvue de
+									chaises longues. Une connexion Wi-Fi est disponible
+									gratuitement. Les chambres climatisées de l'établissement sont
+									dotées d'une télévision, d'un coin salon et d'une armoire. Les
+									salles de bains privatives sont pourvues d'un sèche-cheveux et
+									d'une baignoire ou d'une douche. Un petit-déjeuner est servi
+									tous les matins au sein du Mira Palace. Vous pourrez déguster
+									des plats marocains au restaurant de l'hôtel. L'établissement
+									abrite également une cafétéria.</p>
+								<p>
+									Pour une réservation <a
+										href="https://www.google.com/travel/hotels/Al%20Hoce%C3%AFma/entity/ChgI1IrGyvCG7-EUGgwvZy8xaGY5X3BrdngQAQ?g2lb=2502548%2C2503780%2C4258168%2C4270442%2C4306835%2C4317915%2C4328159%2C4371335%2C4401769%2C4419364%2C4428793%2C4463263%2C4463666%2C4464463%2C4482194%2C4482438%2C4488304%2C4270859%2C4284970%2C4291517%2C4464911&hl=fr-MA&gl=ma&un=1&ap=aAE&q=hotels%20alhoceima&rp=EKLl6Kmu9OqAXRCk_PXlkazF-rUBEOiT7YOCpNXh7gEQx4LA347aocduOAFAAEgCogELQWwgSG9jZcOvbWE&ictx=1&sa=X&ved=0CAAQ5JsGahcKEwiAqtrXhp7uAhUAAAAAHQAAAAAQAg&utm_campaign=sharing&utm_medium=link&utm_source=htls&hrf=CgUIoAYQACIDTUFEKhYKBwjlDxABGBESBwjlDxABGBIYASgAsAEAWAFoAZoBDRILQWwgSG9jZcOvbWGiARgKCS9tLzAzenZycBILQWwgSG9jZcOvbWGqAQoKAgghEgIIWxgBkgECIAE">Cliquez
+										ici</a>
+							</div>
+						</div>
+						<div class="col-md-4 col-sm-6 col-xs-12">
+							<div class="fh5co-person">
+								<figure class="animate-box">
+									<img th:src="@{../../../images2/puertoMarino.jpg}"
+										src="/images2/puertoMarino.jpg" class="img-responsive">
+								</figure>
+								<h3 class="fh5co-name animate-box">Hotel Puerto Marino</h3>
+								<br>
+								<p class="fh5co-bio animate-box">Pourvu d'une connexion
+									Wi-Fi gratuite, le Puerto Marino propose un hébergement à Al
+									Hoceïma. Le logement comprend un coin salon. Vous profiterez
+									par ailleurs d'une terrasse et d'un restaurant. L'aéroport
+									Cherif Al Idrissi, le plus proche, est accessible à 11 km du
+									Puerto Marino. Les couples apprécient particulièrement
+									l'emplacement de cet établissement. Ils lui donnent la note de
+									8,1 pour un séjour à deux.</p>
+								<p>Pour une reservation</p>
+								<a
+									href="https://www.google.com/travel/hotels/Al%20Hoce%C3%AFma/entity/ChoIuLbC4bi_yZLsARoNL2cvMTFmOGhsZjkydhAB?g2lb=2502548%2C2503780%2C4258168%2C4270442%2C4306835%2C4317915%2C4328159%2C4371335%2C4401769%2C4419364%2C4428793%2C4463263%2C4463666%2C4464463%2C4482194%2C4482438%2C4488304%2C4270859%2C4284970%2C4291517%2C4464911&hl=fr-MA&gl=ma&un=1&ap=aAE&q=hotels%20alhoceima&rp=EKLl6Kmu9OqAXRCk_PXlkazF-rUBEOiT7YOCpNXh7gEQx4LA347aocduOAFAAEgCogELQWwgSG9jZcOvbWE&ictx=1&sa=X&ved=0CAAQ5JsGahcKEwjw7rLOiJ7uAhUAAAAAHQAAAAAQAg&utm_campaign=sharing&utm_medium=link&utm_source=htls&hrf=CgUIoAYQACIDTUFEKhYKBwjlDxABGBESBwjlDxABGBIYASgAsAEAWAFoAZoBDRILQWwgSG9jZcOvbWGiARgKCS9tLzAzenZycBILQWwgSG9jZcOvbWGqAQoKAgghEgIIWxgBkgECIAE">Cliquez
+									ici </a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+			<iframe
+				src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d127747.71673999482!2d-3.927519216478757!3d35.17182206865752!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sfr!2sma!4v1608295207078!5m2!1sfr!2sma"
+				width=100% height="450" frameborder="0" style="border: 0;"
+				allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+			<div class="fh5co-copyright animate-box">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12">
+
+							<p class="fh5co-right">
+								<small class="fh5co-right">By salwa and Bouchra</small>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			</footer>
+			<!-- END #fh5co-footer -->
+		</div>
+		<script src="../static/js2/jquery.min.js"
+			th:src="@{/js2/jquery.min.js}"></script>
+		<script src="../static/js2/jquery.easing.1.3.js"
+			th:src="@{/js2/jquery.easing.1.3.js}"></script>
+		<script src="../static/js2/bootstrap.min.js"
+			th:src="@{/js2/bootstrap.min.js}"></script>
+		<script src="../static/js2/jquery.waypoints.min.js"
+			th:src="@{/js2/jquery.waypoints.min.js}"></script>
+		<script src="../static/js2/jquery.flexslider-min.js"
+			th:src="@{/js2/jquery.flexslider-min.js}"></script>
+		<script src="../static/js2/jquery.magnific-popup.min.js"
+			th:src="@{/js2/jquery.magnific-popup.min.js}"></script>
+		<script src="../static/js2/magnific-popup-options.js"
+			th:src="@{/js2/magnific-popup-options.js}"></script>
+
+		<script src="../static/js2/jquery.style.switcher.js"
+			th:src="@{/js2/jquery.style.switcher.js}"></script>
+		<script>
+			$(function() {
+				$('#colour-variations ul').styleSwitcher({
+					defaultThemeId : 'theme-switch',
+					hasPreview : false,
+					cookie : {
+						expires : 30,
+						isManagingLoad : true
+					}
+				});
+				$('.option-toggle').click(function() {
+					$('#colour-variations').toggleClass('sleep');
+				});
+			});
+		</script>
+		<script src="../static/js2/main.js" th:src="@{/js2/main.js}"></script>
+
+		<script src="../static/js2/jquery.cookie.js"
+			th:src="@{/js2/jquery.cookie.js}"></script>
+</body>
+</html>
+

@@ -250,4 +250,12 @@ public class DestinationController {
 		 return mv;
 	} */
 	
+	@GetMapping(value="/hotelsTemplate")
+	public ModelAndView hotelsHoceima() {
+		ModelAndView mv= new ModelAndView();
+		mv.addObject("destination",new Destination());
+		mv.setViewName("hotelsTemplate");
+		return mv;
+	}
+	
 }

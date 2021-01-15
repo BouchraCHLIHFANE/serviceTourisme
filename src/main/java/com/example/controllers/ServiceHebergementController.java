@@ -168,4 +168,13 @@ public class ServiceHebergementController {
 		return mv;
 	}
 	
+	@GetMapping(value="/hotelsHoceima")
+		public ModelAndView pagesHotels() {
+			ModelAndView mv= new ModelAndView();
+			Hotel hotel= new Hotel();
+			mv.addObject("hotel",new Hotel());
+			mv.setViewName("hotelsHoceima");
+			return mv;
+		}
+	
 }
